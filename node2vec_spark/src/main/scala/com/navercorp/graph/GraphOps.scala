@@ -31,6 +31,14 @@ object GraphOps {
       else larger.append(large)
     }
 
+    while (larger.nonEmpty) {
+      val large = larger.remove(larger.length - 1)
+      q(large) = 1
+    }
+    while (smaller.nonEmpty) {
+      val small = smaller.remove(smaller.length - 1)
+      q(small) = 1
+    }
     (J, q)
   }
 
